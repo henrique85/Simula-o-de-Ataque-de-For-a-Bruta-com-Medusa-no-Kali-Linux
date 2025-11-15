@@ -219,4 +219,18 @@ smbclient -L //192.168.56.102 -U msfadmin
 
 Quando acessa, vemos uma lista de compartilhamento.
 
-### Aprendizado com p 
+### Aprendizado com o repositório
+
+- Enumeração ativa.
+- Serviços FTP, HTTP, SMB.
+- Técnicas de força bruta.
+- Threads e paralelização.
+- Password Spraying (baixa taxa de bloqueio).
+- Importância de senhas fortes.
+
+  ### Possíveis Próximos Passos
+
+ - Capturar tráfego do ataque usando Wireshark.
+ - Usar Hydra como comparação.
+ - Configurar bloqueios e proteções.
+ - Implementar log analysis após o ataque.
