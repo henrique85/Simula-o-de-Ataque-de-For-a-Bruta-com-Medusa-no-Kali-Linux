@@ -1,4 +1,4 @@
-Simulação de Ataque de Força Bruta, utilizando a ferramenta Medusa no Kali Linux.
+Simulação de Ataques de Força Bruta e Enumeração com Medusa, Nmap e Enum4Linux
 
 ### Requisitos
 
