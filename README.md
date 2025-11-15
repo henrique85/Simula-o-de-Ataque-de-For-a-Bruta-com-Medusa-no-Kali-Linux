@@ -8,10 +8,7 @@ Simulação de Ataque de Força Bruta, utilizando a ferramenta Medusa no Kali Li
 
 ### ⚠️ Observações
 
-Credenciais padrão:
-- Kali Linux:
-  - Usuário: kali
-  - Senha: kali
-- Metasploitable: usuário **msfadmin**, senha **msfadmin**
+- Kali Linux: login e senha padrão → **kali**
+- Metasploitable: login e senha padrão → **msfadmin**
 
 
