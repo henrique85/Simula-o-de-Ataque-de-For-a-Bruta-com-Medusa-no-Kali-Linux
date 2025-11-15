@@ -28,3 +28,28 @@ nmap -sV -p 21,22,80,445,139 192.168.56.102
 Este comando vai mostrar qual o estado das portas como "**open**".
 
 ![Varredura Nmap](./images/01_varredura_nmap.png)
+
+Se quiser validar se o protocolo FTP realmente está realmente aberto, basta executar o comando:
+
+ftp 192.168.56.102
+
+**2. Wordlist**
+
+Conforme a imagem anterior, sabemos que o serviço está aberto mas não temos como saber qual login e senha correto. Diante disso, vamos criar duas Wordlists, uma contendo nomes de usuários e outra contendo senhas. 
+Wordlists são arquivos com usuários e senhas possíveis. Para isso vamos utilizar os comandos abaixo:
+
+- Comando para criar lista de usuários:
+
+echo -e “user\nmsfadmin\nadmin\nroot” > users.txt
+
+- Comando para criar lista de senhas:
+
+echo -e “123456\npassword\nqwerty\nmsfadmin” > pass.txt
+
+
+
+
+
+
+
+
