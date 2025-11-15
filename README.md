@@ -1,12 +1,24 @@
 Simulação de Ataques de Força Bruta e Enumeração com Medusa, Nmap e Enum4Linux
 
+Este repositório demonstra, de forma prática e didática, como funcionam ataques de enumeração, força bruta e password spraying em um ambiente controlado utilizando Kali Linux e Metasploitable. O foco é ensinar fundamentos essenciais de ataques ofensivos para estudantes de Cybersecurity.
+
+### ⚠️ Observações
+
+Este material é destinado exclusivamente a estudos em ambientes controlados. Nunca utilize estas técnicas contra sistemas sem autorização explícita.
+
+### Arquitetura do ambiente
+
+Host (VirtualBox)
+ ├── Kali Linux (Atacante)
+ └── Metasploitable 2 (Alvo: 192.168.56.102)
+
 ### Requisitos
 
 - Software de Máquina Virtual (no caso será utilizado o VirtualBox, que você pode baixar clicando [aqui](https://www.virtualbox.org/wiki/Downloads)).
 - VM Kali Linux (link para download [aqui](https://www.kali.org/get-kali/#kali-virtual-machines)).
 - VM Metasploitable (link para download [aqui](https://sourceforge.net/projects/metasploitable/files/)).
 
-### ⚠️ Observações
+### Credenciais
 
 - Kali Linux: login e senha padrão → **kali**
 - Metasploitable: login e senha padrão → **msfadmin**
@@ -31,7 +43,7 @@ Este comando vai mostrar qual o estado das portas como "**open**".
 
 ![Varredura Nmap](./images/01_varredura_nmap.png)
 
-Se quiser validar se o protocolo FTP realmente está realmente aberto, basta executar o comando:
+Se quiser validar se o protocolo FTP realmente está aberto, basta executar o comando:
 
 ```bash
 ftp 192.168.56.102
@@ -56,7 +68,7 @@ echo -e “123456\npassword\nqwerty\nmsfadmin” > pass.txt
 
 **3. Efetuando o ataque com Medusa**
 
-Criada as wordlists, agora é hora de executar o **Medusa**, que vai simular combinações entre usuários e senhas. O comando é:
+Criadas as wordlists, agora é hora de executar o **Medusa**, que vai simular combinações entre usuários e senhas. O comando é:
 
 ```bash
 medusa -h 192.168.56.102 -U users.txt -P pass.txt -M ftp -t 6
@@ -81,7 +93,7 @@ ftp 192.168.56.102
 
 ### Ataques de força bruta aplicados em formulários de login em sistemas web
 
-Para testar essa ferramenta, utilizaremos um formulário web do próprio metasploitable para teste. Para aceesar, abra um navegador e acesse através do seguinte endereço:
+Para testar essa ferramenta, utilizaremos um formulário web do próprio metasploitable para teste. Para acessar, abra um navegador e acesse através do seguinte endereço:
 
 ```bash
 http://192.168.56.102/dvwa/login.php
@@ -139,7 +151,7 @@ Vamos supor que você descobriu em uma rede um smb ativo. O próximo passo, é *
 
 O **Password Spraying** é uma *técnica furtiva de ataque às senhas*. Ao invés de tentar muitas senhas para um único usuário, o que leva ao bloqueio de tentativas, a gente vai testar **uma senha comum para muitos usuários diferentes**.
 
-Para isso, utile o seguinte comando:
+Para isso, utilze o seguinte comando:
 
 ```bash
 enum4linux -a 192.168.56.102 | tee enum4_output.txt
@@ -148,7 +160,7 @@ enum4linux -a 192.168.56.102 | tee enum4_output.txt
 Explicando os parâmetros:
 - `enum4linux`: ferramenta principal para enumeração.
 - `-a`: vai ativar todas as técnicas possíveis para enumeração.
-- `192.168.56.102`: ip do alvo.
+- `192.168.56.102`: IP do alvo.
 - `tee enum4_output.txt`: gravar a saída do comando em um arquivo.
 
 Depois ler o conteúdo com o seguinte comando:
@@ -184,12 +196,12 @@ medusa -h 192.168.56.102 -U smb_users.txt -P senhas_spray.txt -M smbnt -t 2 -T 5
 ```
 
 Explicando os parâmetros:
-- `-h 192.168.56.102`: ip do alvo.
+- `-h 192.168.56.102`: IP do alvo.
 - `-U smb_users.txt`: lista de usuários descoberta na enumeração.
 - `-P senhas_spray.txt`: lista de senhas fracas.
 - `-M smbnt`: módulo específico para ataques via smb.
-- `-t 2`: uma das duas tags simultâneas, ou seja, vai simular dois usuários testando senhas.
-- `-T 50`: significa até 50 hosts em paralelo.
+- `-t 2`: define duas threads paralelas, isto é, duas tentativas simultâneas.
+- `-T 50`: define o tempo máximo (timeout) em segundos para cada conexão/host.
 
 Esse ataque vai fazer no total 3 usuários por 4 senhas, ou seja, 12 tentativas de login, com um delay de 5 segundos entre tentativas.
 
@@ -207,4 +219,4 @@ smbclient -L //192.168.56.102 -U msfadmin
 
 Quando acessa, vemos uma lista de compartilhamento.
 
-
+### Aprendizado com p 
