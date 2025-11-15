@@ -71,6 +71,6 @@ Explicando os parâmetros:
 
 Após executar o comando procurar onde ele teve “sucesso” na investida, bem como as combinações de usuário e senha:
 
+![Varredura Medusa](./images/02_varredura_medusa.png)
 
-
-
+TESTE
