@@ -81,7 +81,7 @@ ftp 192.168.56.102
 
 ### Ataques de força bruta aplicados em formulários de login em sistemas web
 
-Para testar essa ferramenta, utilizaremos um formulário web do próprio metasploitable para teste acessando da seguinte maneira:
+Para testar essa ferramenta, utilizaremos um formulário web do próprio metasploitable para teste. Para aceesar, abra um navegador e acesse através do seguinte endereço:
 
 ```bash
 http://192.168.56.102/dvwa/login.php
@@ -100,6 +100,8 @@ Comando para criar lista de **senhas**:
 ```bash
 echo -e “123456\npassword\nqwerty\nmsfadmin” > pass.txt
 ```
+
+**2. Executar o ataque**
 
 Agora, utilizar o Medusa para simular combinações entre usuários e senhas, através do comando:
 
