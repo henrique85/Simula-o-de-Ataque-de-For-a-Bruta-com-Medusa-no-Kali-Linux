@@ -21,9 +21,7 @@ Simulação de Ataque de Força Bruta, utilizando a ferramenta Medusa no Kali Li
 
 A primeira parte desta simulação é a enumeração, que consiste em descobrir quais serviços estão disponíveis no sistema alvo. Para isso é utilizado o comando **nmap**, que vai escanear as portas dos principais protocolos de rede como FTP, SSH, HTTP, HTTPS e SMB. O parâmetro **-sV** serve para identificar a versão do serviço que está rodando em cada porta:
 
-nmap -sV -p 21,22,80,445,139 192.168.56.102
-
-`nmap -sV -p 21,22,80,445,139 192.168.56.102`
+Para isso, utilize o seguinte comando:
 
 ```bash
 nmap -sV -p 21,22,80,445,139 192.168.56.102
