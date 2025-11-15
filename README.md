@@ -33,7 +33,9 @@ Este comando vai mostrar qual o estado das portas como "**open**".
 
 Se quiser validar se o protocolo FTP realmente está realmente aberto, basta executar o comando:
 
+```bash
 ftp 192.168.56.102
+```
 
 **2. Wordlist**
 
