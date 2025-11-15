@@ -197,5 +197,14 @@ Vai aparecer algo assim:
 
 ![Varredura Medusa](./images/05_varredura_medusa.png)
 
+Quando aparecer "**ACCOUNT FOUND**", significa que confirma que o ataque deu certo e o usuário tem acesso ao sistema.
+
+Testando se o acesso é real com o comando:
+
+```bash
+smbclient -L //192.168.56.102 -U msfadmin
+```
+
+Quando acessa, vemos uma lista de compartilhamento.
 
 
