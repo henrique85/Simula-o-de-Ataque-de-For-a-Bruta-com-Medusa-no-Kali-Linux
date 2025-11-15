@@ -129,3 +129,8 @@ Onde está “**SUCCESS**” ele encontrou credenciais válidas:
 
 Para validar, acesse com as seguintes credenciais de login: admin e senha: password.
 
+### Ataque em cadeia, enumeração smb + password spraying
+
+O protocolo **SMB** significa *Server Message Block*. É um protocolo do Windows utilizado para compartilhar arquivos, pastas, impressoras e também para realizar a autenticação de usuários e comunicação entre máquinas Windows e Linux via samba. Pode ser considerado uma porta para compartilhar recursos da rede interna.
+
+Vamos supor que você descobriu em uma rede um smb ativo. O próximo passo, é **descobrir os usuários existentes no sistema** e **testar senhas fracas** em todos eles discretamente, sem bloquear nenhuma conta.
