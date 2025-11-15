@@ -40,13 +40,13 @@ ftp 192.168.56.102
 **2. Wordlist**
 
 Conforme a imagem anterior, sabemos que o serviço está aberto mas não temos como saber qual login e senha correto. Diante disso, vamos criar duas Wordlists, uma contendo nomes de usuários e outra contendo senhas. 
-Wordlists são arquivos com usuários e senhas possíveis. Para isso vamos utilizar os comandos abaixo:
+**Wordlists** são arquivos com usuários e senhas possíveis. Para isso vamos utilizar os seguintes passos abaixo:
 
-- Comando para criar lista de usuários:
+Comando para criar lista de **usuários**:
 
 echo -e “user\nmsfadmin\nadmin\nroot” > users.txt
 
-- Comando para criar lista de senhas:
+Comando para criar lista de **senhas**:
 
 echo -e “123456\npassword\nqwerty\nmsfadmin” > pass.txt
 
